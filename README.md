@@ -15,7 +15,7 @@ The user must guess the randomly selected number. After each guess, the game wil
 
 **Example**
 
-![alt text]()
+![alt text](https://github.com/Bosaif39/example-pics/blob/main/D_14.PNG?raw=true)
 
 **Requirements:**
 
