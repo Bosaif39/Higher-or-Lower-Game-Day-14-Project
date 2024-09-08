@@ -1,4 +1,3 @@
-#Data for the game
 data_list = [
     {'name': 'John Doe', 'number':  4567, 'job': 'Software Engineer'},
     {'name': 'Jane Smith', 'number': 5678, 'job': 'Data Scientist'},
@@ -62,40 +61,41 @@ data_list = [
     {'name': 'Sofia Davis', 'number': 9012, 'job': 'Operations Director'}
 ]
 
-
-#pick two data randomly
 import random
-cha=random.choice(data_list)
-chb=random.choice(data_list)
+
+# Randomly select two entries from the data_list for comparison
+cha = random.choice(data_list)
+chb = random.choice(data_list)
 print("Higher or lower?")
 
+tr = 1
+while tr > 0:
 
-# a loop to make the user play until he make mistake
-tr=1
-while(tr>0):
-    #make sure a not equal to b
-    test=True
+    # Ensure cha and chb are not the same entry
+    test = True
     while test:
-        if(cha==chb):
-            cha=random.choice(data_list)
-            chb=random.choice(data_list)
+        if cha == chb:
+            cha = random.choice(data_list)
+            chb = random.choice(data_list)
+        else:
+            test = False
 
-        elif(cha!=chb):
-            break
-        
     print(f" A is {cha['name']}, {cha['job']}")
     print(f" B is {chb['name']}, {chb['job']}")
-    i=input(f"Who have higher number of followrs? a or b?:").lower()
-    
-    if(i=='a' and cha['number']>chb['number']):
-        cha=random.choice(data_list)
-        chb=random.choice(data_list)
-        
-    elif(i=='b' and chb['number']>cha['number']):
-        cha=random.choice(data_list)
-        chb=random.choice(data_list)
-        
+
+    i = input("Who has a higher number of followers? a or b?: ").lower()
+
+    # If the user chooses 'a' and cha has more followers, continue the game
+    if i == 'a' and cha['number'] > chb['number']:
+        cha = random.choice(data_list)
+        chb = random.choice(data_list)
+
+    # If the user chooses 'b' and chb has more followers, continue the game
+    elif i == 'b' and chb['number'] > cha['number']:
+        cha = random.choice(data_list)
+        chb = random.choice(data_list)
+
+    # If the user is wrong, end the game
     else:
         print("Game Over")
         break
-     
