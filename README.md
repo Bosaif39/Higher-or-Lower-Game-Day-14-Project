@@ -19,4 +19,4 @@ The user must guess the randomly selected number. After each guess, the game wil
 
 ## **Requirements:**
 
-Python 3.x
+* Python 3.x
